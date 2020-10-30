@@ -15,6 +15,8 @@ Dans une optique d'amélioration des compétences de chacun des étudiants dans 
 - GitHub
 - VsCode pour la rédaction du rapport MarkDown.
 
+## Objectif
+
 # Composition d'une génération et de ses individus
 
 ## Le gène
@@ -39,3 +41,6 @@ Dans une optique d'amélioration des compétences de chacun des étudiants dans 
 
 # Lecture graphique
 
+# Problèms rencontrés
+
+# Retour d'expérience
