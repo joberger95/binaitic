@@ -15,3 +15,27 @@ Dans une optique d'amélioration des compétences de chacun des étudiants dans 
 - GitHub
 - VsCode pour la rédaction du rapport MarkDown.
 
+# Composition d'une génération et de ses individus
+
+## Le gène
+
+## Le gènôme
+
+## Un individu
+
+## Une génération
+
+# Processus de sélection et de mutation
+
+## L'alpha et son fitness
+
+## Le cross-fit
+
+## La sélection des individus
+
+## La mutation aléatoire
+
+## La nouvelle génération
+
+# Lecture graphique
+
