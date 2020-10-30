@@ -56,12 +56,7 @@ bool Generation::lessFitnessThan(Generation *g1, Generation *g2)
 Valeur aléatoire permettant de scinder en deux parties le gène de deux individus. Ces dernières deviennent donc miscibles afin de former un nouveau gène. C'est la **sélection naturelle et aléatoire**. Ce processus est appliqué à toute la génération pour former la génération suivante.
 
 ```C++
-for(int i = 0; i < Parameters::initialGenesNb; i++) {
-        x = Parameters::randomGenerator->getFloat();
-        if(x < m_x_min || x > m_x_max) {
-            i--;
-            continue;
-        }
+
 ```
 ## La sélection des individus
 
