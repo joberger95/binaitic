@@ -3,7 +3,7 @@
 using namespace qstd;
 
 int Parameters::individualsNb = 20;
-int Parameters::generationsMaxNb = 50;
+int Parameters::generationsMaxNb = 10;
 int Parameters::initialGenesNb = 20;
 int Parameters::minFitness = 0;
 
@@ -16,7 +16,7 @@ double Parameters::crossoverRate = 0.6;
 // - 0 : non aléatoire pour debug
 // - rien : aléatoire
 // ******************************************************
-MyRandom *Parameters::randomGenerator=new MyRandom(0);
+MyRandom *Parameters::randomGenerator=new MyRandom();
 
 int Parameters::debug = 1;
 

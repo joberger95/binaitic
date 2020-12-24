@@ -1,6 +1,9 @@
 #include "moncanvas.h"
 #include <QDebug>
 #include <QPainter>
+#include <QTextStream>
+#include <QList>
+#include <stdio.h>
 
 MonCanvas::MonCanvas(QWidget *parent) : QWidget(parent)
 {}
@@ -23,7 +26,7 @@ void MonCanvas::changeEchelle()
     // recalcule ech_x et ech_y
     ech_x = largCan / nb_cubes_x;
     ech_y = hautCan / nb_cubes_y;
-    qDebug() << ech_x <<", "<< ech_y;
+    qDebug() << "repaint scale :" << ech_x <<", "<< ech_y;
 }
 
 QPointF MonCanvas::changeCoo(QPointF p)
@@ -33,10 +36,7 @@ QPointF MonCanvas::changeCoo(QPointF p)
 
 QPointF MonCanvas::changeCoo_figure(QPointF p)
 {
-    return QPointF(
-        p.rx() /*/ (m_generation->getX_max() - m_generation->getX_min())*/ * ech_x / 100,
-        p.ry() /*/ (m_process->getY_max() - m_process->getY_min())*/ * ech_y / 100
-    );
+    return QPointF(p.rx()*ech_x * nb_cubes_x, (m_generation->at(m_generation->length()-1)->getY() - p.ry())*ech_y * nb_cubes_y);
 }
 
 void MonCanvas::paintEvent(QPaintEvent *)
@@ -65,10 +65,15 @@ void MonCanvas::paintEvent(QPaintEvent *)
     }*/
 
     //display points
-/*
+
     painter.setPen(black_bold);
     int temp = m_generation->length();
+    char digit_text[10];
     for(int i = 0; i < temp; i++) {
-        painter.drawPoint(changeCoo(QPointF(m_generation->at(i)->getX(), m_generation->at(i)->getY())));
-    }*/
+        //qDebug()<<m_generation->at(i)->getX();
+        sprintf(digit_text,"%d",m_generation->at(i)->getGene_num());
+        QString text(digit_text);
+        painter.drawPoint(changeCoo_figure(QPointF(m_generation->at(i)->getX(), m_generation->at(i)->getY())));
+        painter.drawText(changeCoo_figure(QPointF(m_generation->at(i)->getX(), m_generation->at(i)->getY())), text);
+    }
 }

@@ -132,7 +132,7 @@ void EvolutionProcess::crossover(int ind)
     append(a_generation);
     m_generation_ind++;
 
-    a_gene = new Gene(at(0)->at(0)->getX(), at(0)->at(0)->getX()); //insert first gene
+    a_gene = new Gene(at(0)->at(0)->getX(), at(0)->at(0)->getY()); //insert first gene
     a_gene->setGene_num(at(0)->at(0)->getGene_num());
     a_generation->GeneAppend(a_gene);
 
@@ -157,8 +157,9 @@ void EvolutionProcess::crossover(int ind)
 
         a_generation->append(a_gene);
         a_generation->setGene_ind(a_generation->getGene_ind() + 1);
-
-        std::sort(a_generation->begin(), a_generation->end(), Gene::lessYThan);
     }
+
+    std::sort(a_generation->begin(), a_generation->end(), Gene::lessYThan);
+    a_generation->setFitness(a_generation->at(0)->getY());
 }
 
