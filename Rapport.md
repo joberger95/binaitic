@@ -25,7 +25,7 @@ Ici, l'étude d'une fonction aléatoire représentée par une courbe et composé
 
 ## Le gène
 
-Un gène est formé d'une coordonnée en **x** ainsi que dd'une coordonnée en **y**.
+Un gène est formé d'une coordonnée en **x** ainsi que d'une coordonnée en **y**.
 
 ## Un individu
 
@@ -70,8 +70,39 @@ La mutation est dite aléatoire car mélange le gène de deux individus (cf: cro
 
 La nouvelle génération est la résultante des mélanges effectués sur la génération n-1. Elle se verra elle aussi désigné son Alpha et subira les mêmes effets afin de créer la génération n+1.
 
+## UML moteur
+
+Ci-dessous, le diagramme UML du moteur du projet:
+
+![](uml_moteur.png)
+
+
 # Lecture graphique
+
+Une classe **historic** permet de faire la liaison entre le moteur (celui qui "prédit" les générations) et l'interface graphique. Il faut donc inclure ce type de résultat:
+
+![](generation.png)
+
+Dans l'interface suivant:
+
+![](interface_utilisateur.png)
+
+L'interface permet:
+- le lancement du moteur avec le bouton *Lancer*
+- la navigation entre les générations grâce aux boutons *Précédent* et *Suivant*
+- la visualisation de l'équation et d'autres informations liées aux moteur tel que la population, le nombre de génération ou les diverses informations liées aux calculs.
+- enfin un bouton *Quitter* permet de fermer l'interface
+
+## UML interface graphique
+
+Le diagramme UML de l'interface graphique
+
+![](uml_graph.png)
 
 # Problèmes rencontrés
 
+Comme on peut le voir sur l'affichage ci-dessus, il n'y a pas de courbe. ss
+
 # Retour d'expérience
+
+Ce projet a permis à l'équipe une progression et une appréhension saine de la génétique. Ainsi, les différemment sujets et termes liés à ce dernier sont alors mieux compris. De plus, cela a permis à l'ensemble des membres de progresser en programmation et notamment en progression orientée objet.
